@@ -3,6 +3,7 @@ const { Configuration, OpenAIApi } = require('openai');
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
+
 const openai = new OpenAIApi(configuration);
 
 const generateImage = async (req, res) => {
@@ -24,6 +25,7 @@ const generateImage = async (req, res) => {
       success: true,
       data: imageUrl,
     });
+    
   } catch (error) {
     if (error.response) {
       console.log(error.response.status);
